@@ -1,0 +1,371 @@
+:root {
+  --primary: #245B49;
+  --primary-hover: #1c493a;
+  --primary-light: #eaf3f0;
+  --secondary: #A8D8C5;
+  --secondary-light: #eaf6f2;
+  --accent: #DDEBB1;
+  --accent-hover: #cfdf9f;
+  --background: #F7F9F7;
+  --cards: #FFFFFF;
+  --text: #24352E;
+  --muted-text: #718078;
+  --borders: #E5ECE7;
+  
+  --sam-red: #D9383A;
+  --sam-light: #FDEDED;
+  --mam-orange: #E67E22;
+  --mam-light: #FEF5EC;
+  --normal-green: #2E7D32;
+  --normal-light: #EDF7ED;
+  --info-blue: #1976D2;
+  --info-light: #EBF3FB;
+
+  --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --shadow-sm: 0 1px 3px rgba(36, 91, 73, 0.05), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 14px rgba(36, 91, 73, 0.07), 0 2px 6px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 10px 25px rgba(36, 91, 73, 0.1), 0 4px 10px rgba(0, 0, 0, 0.04);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* App Container Layout */
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--background);
+}
+
+.main-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  transition: all 0.3s ease;
+}
+
+.content-body {
+  flex: 1;
+  padding: 1.5rem 2rem 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .content-body {
+    padding: 1rem;
+  }
+}
+
+/* Custom Cards */
+.custom-card {
+  background: var(--cards);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--borders);
+  box-shadow: var(--shadow-sm);
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.custom-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.card-title-lg {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+}
+
+.card-subtitle-sm {
+  font-size: 0.85rem;
+  color: var(--muted-text);
+}
+
+/* Buttons */
+.btn-primary-custom {
+  background-color: var(--primary);
+  color: #ffffff;
+  border: 1px solid var(--primary);
+  border-radius: var(--radius-md);
+  padding: 0.6rem 1.25rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-primary-custom:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(36, 91, 73, 0.2);
+}
+
+.btn-secondary-custom {
+  background-color: var(--secondary-light);
+  color: var(--primary);
+  border: 1px solid var(--secondary);
+  border-radius: var(--radius-md);
+  padding: 0.6rem 1.25rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-secondary-custom:hover {
+  background-color: var(--secondary);
+  color: #174234;
+}
+
+.btn-outline-custom {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--borders);
+  border-radius: var(--radius-md);
+  padding: 0.55rem 1.1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-custom:hover {
+  background: #f0f4f2;
+  border-color: #cbd8d1;
+  color: var(--primary);
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.badge-normal {
+  background-color: var(--normal-light);
+  color: var(--normal-green);
+  border: 1px solid #c7e6c9;
+}
+
+.badge-mam {
+  background-color: var(--mam-light);
+  color: var(--mam-orange);
+  border: 1px solid #f9dab3;
+}
+
+.badge-sam {
+  background-color: var(--sam-light);
+  color: var(--sam-red);
+  border: 1px solid #f8c9ca;
+}
+
+.badge-info {
+  background-color: var(--info-light);
+  color: var(--info-blue);
+  border: 1px solid #c5dcfa;
+}
+
+/* Custom Table */
+.custom-table-wrapper {
+  background: var(--cards);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--borders);
+  overflow: hidden;
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 0;
+}
+
+.custom-table th {
+  background-color: #f3f7f4;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.9rem 1.25rem;
+  border-bottom: 1px solid var(--borders);
+  border-top: none;
+}
+
+.custom-table td {
+  padding: 1rem 1.25rem;
+  color: var(--text);
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--borders);
+  vertical-align: middle;
+}
+
+.custom-table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.custom-table tbody tr:hover {
+  background-color: #f9fbf9;
+}
+
+.custom-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Form Controls */
+.form-label-custom {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.form-control-custom,
+.form-select-custom {
+  background-color: #ffffff;
+  border: 1.5px solid var(--borders);
+  border-radius: var(--radius-md);
+  padding: 0.65rem 0.9rem;
+  font-size: 0.9rem;
+  color: var(--text);
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+.form-control-custom:focus,
+.form-select-custom:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(36, 91, 73, 0.12);
+  background-color: #ffffff;
+}
+
+/* MUAC Color Tape */
+.muac-tape-indicator {
+  height: 12px;
+  border-radius: 6px;
+  background: linear-gradient(to right, #D9383A 0%, #D9383A 35%, #E67E22 35%, #E67E22 65%, #2E7D32 65%, #2E7D32 100%);
+  position: relative;
+  margin: 0.75rem 0 0.5rem;
+}
+
+.muac-marker {
+  position: absolute;
+  top: -6px;
+  width: 4px;
+  height: 24px;
+  background-color: #17241e;
+  border: 1px solid #ffffff;
+  border-radius: 2px;
+  transform: translateX(-50%);
+  transition: left 0.3s ease;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+
+/* AI Recommendation Box */
+.ai-insight-box {
+  background: linear-gradient(135deg, #f1f8f5 0%, #fafffb 100%);
+  border: 1.5px solid var(--secondary);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.ai-insight-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background-color: var(--primary);
+}
+
+/* Breadcrumbs */
+.breadcrumb-item a {
+  color: var(--muted-text);
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+.breadcrumb-item a:hover {
+  color: var(--primary);
+}
+.breadcrumb-item.active {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd8d1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
+
+/* Print styles for Reports & Growth Card */
+@media print {
+  .sidebar, .topbar, .no-print, .btn {
+    display: none !important;
+  }
+  .app-layout {
+    display: block;
+    background: white;
+  }
+  .content-body {
+    padding: 0;
+  }
+  .custom-card {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+}
